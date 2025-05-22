@@ -1,0 +1,59 @@
+<html>
+ <title>Head, Shoulders</title>
+ <style>
+  body {
+   display: flex;
+  }
+  div {
+   height: 150px;
+   width: 150px;
+  }
+  div.fake {
+   background-image: url("./fake.jpg");
+   background-size: 1125px 666px;
+   background-position-x: 770px;
+   background-position-y: 225px;
+  }
+  div.overlay {
+   position: absolute; 
+   opacity: 0%;
+   display: none;
+  }
+  div.real {
+   background-image: url("./real.jpg");
+   background-size: 500px 666px;
+   background-position-y: 225px;
+  }
+  div.real.roi3 {
+   background-position-x: 20px;
+   opacity: 80%;
+   opacity: 1;
+   filter: brightness(250%) contrast(150%) saturate(700%);
+  }
+  div.real.roi2 {
+   background-position-x: 145px;
+   opacity: 50%;
+   filter: contrast(125%) brightness(600%) saturate(200%);
+   filter: contrast(95%) brightness(50%) saturate(0%);
+   display: none;
+  }
+  div.real.roi1 {
+   background-position-x: 395px;
+   opacity: 50%;
+   filter: contrast(130%) brightness(600%) saturate(200%);
+   filter: contrast(130%) brightness(900%) saturate(1800%);
+   display: none;
+  }
+ </style> 
+ <body>
+  <div style="display:flex;">
+   <div class="real roi3">
+    <div class="real roi2">
+     <div class="real roi1"></div>
+    </div>
+   </div>
+   <div class="fake overlay"></div>
+  </div>
+  <div class="fake"></div>
+   </body>
+</html>

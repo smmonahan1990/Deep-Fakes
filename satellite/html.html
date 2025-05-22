@@ -1,0 +1,35 @@
+<html>
+ <title>Deep Fake</title>
+ <style>
+  div {
+   height: 500px;
+   width: 3500px;
+   background-size: contain;
+  }
+  div.fake {
+   background-image: url("./fake.jpg");
+  }
+  div.real {
+   background-image: url("./real.jpg");
+   filter: saturate(900%);
+  }
+ </style> 
+ <body>
+  <div class="fake"><div class="real" id="one"></div></div>
+  <p></p>
+  <span style="position:fixed"><input type="range" min="0" max="100" id="ed" value="50">
+   <p>Opacity: <span id="op"></span></p></span>
+ </body>
+ <script>
+  var x = document.getElementById("ed");
+  var y = document.getElementById("op");
+  var z = document.getElementById("one");
+  z.style.opacity="0.5";
+  y.innerHTML = x.value/100;
+  x.oninput = function() {
+   var a = this.value/100;
+   z.style.opacity = a;
+   y.innerHTML = a;
+  }
+ </script>
+</html>

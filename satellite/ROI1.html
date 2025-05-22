@@ -1,0 +1,58 @@
+<html>
+ <title>Structural Damage</title>
+ <style>
+  body {
+   display: flex;
+  }
+  div {
+   height: 250px;
+   width: 150px;
+  }
+  div.fake {
+   background-image: url("./fake.jpg");
+   background-size: 1125px 666px;
+   background-position-x: 1012px;
+   background-position-y: 0px;
+  }
+  div.overlay {
+   position: absolute; 
+   opacity: 0%;
+   display: none;
+  }
+  div.real {
+   background-image: url("./real.jpg");
+   background-size: 500px 666px;
+   background-position-y: 0px;
+  }
+  div.real.roi3 {
+   background-position-x: 137px;
+   opacity: 100%;
+   filter: saturate(800%);
+
+  }
+  div.real.roi2 {
+   background-position-x: 262px;
+   opacity: 80%;
+   filter: saturate(800%);
+   display: none;
+  }
+  div.real.roi1 {
+   background-position-x: 387px;
+   opacity: 80%;
+   filter: brightness(25%) contrast(50%) saturate(50%);
+   display: none;
+  }
+
+ </style> 
+ <body>
+  <div style="display:flex;">
+   <div class="real roi3">
+    <div class="real roi2">
+     <div class="real roi1"></div>
+    </div>
+   </div>
+   <div class="fake overlay"></div>
+  </div>
+  <div class="fake"></div>
+ </body>
+</html>

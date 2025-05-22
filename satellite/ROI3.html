@@ -1,0 +1,56 @@
+<html>
+ <title>Knees, Toes</title>
+ <style>
+  body {
+   display: flex;
+  }
+  div {
+   height: 150px;
+   width: 150px;
+  }
+  div.fake {
+   background-image: url("./fake.jpg");
+   background-size: 1125px 666px;
+   background-position-x: 420px;
+   background-position-y: bottom;
+  }
+  div.overlay {
+   position: absolute; 
+   opacity: 0%;
+   display: none;
+  }
+  div.real {
+   background-image: url("./real.jpg");
+   background-size: 500px 666px;
+   background-position-y: bottom;
+   filter: saturate(800%);
+  }
+  div.real.roi3 {
+   background-position-x: 45px;
+   opacity: 80%;
+  }
+  div.real.roi2 {
+   background-position-x: 170px;
+   opacity: 80%;
+   display: none;
+
+  }
+  div.real.roi1 {
+   background-position-x: 295px;
+   opacity: 80%;
+   display: none;
+  }
+
+ </style> 
+ <body>
+  <div style="display:flex">
+   <div class="real roi3">
+    <div class="real roi2">
+     <div class="real roi1"></div>
+    </div>
+   </div>
+   <div class="fake overlay"></div>
+  </div>
+  <div class="fake"></div>
+  </body>
+</html>
