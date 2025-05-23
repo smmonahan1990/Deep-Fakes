@@ -1,0 +1,39 @@
+<html>
+ <title>Deep Fake</title>
+ <style>
+  div {
+   height: 500px;
+   width: 2500px;
+   background-size: contain;
+  }
+  div.steve {
+   background-image: url("./Steve.jfif");
+  }
+  div.ed {
+   background-image: url("./Ed.jpg");
+  }
+ </style> 
+ <body>
+  <div class="steve">
+   <div class="ed" id="one">
+   </div>
+  </div>
+  <p></p>
+  <span style="position:fixed">
+   <input type="range" min="0" max="100" id="ed" value="50">
+   <p>Opacity: <span id="op"></span></p>
+  </span>
+ </body>
+ <script>
+  var x = document.getElementById("ed");
+  var y = document.getElementById("op");
+  var z = document.getElementById("one");
+  z.style.opacity="0.5";
+  y.innerHTML = x.value/100;
+  x.oninput = function() {
+   var a = this.value/100;
+   z.style.opacity = a;
+   y.innerHTML = a;
+  }
+ </script>
+</html>
